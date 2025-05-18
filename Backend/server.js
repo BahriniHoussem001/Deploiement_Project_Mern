@@ -27,7 +27,8 @@ if (!fs.existsSync(tempDir)) {
 // Serve static files from temp directory
 app.use('/temp', express.static(tempDir));
 
-const mongo_url = config.get("mongo_url");
+
+const mongo_url = process.env.MONGO_URI;
 mongoose.set("strictQuery", true);
 
 mongoose
