@@ -24,7 +24,7 @@ const CVList = () => {
     const fetchCandidates = async () => {
       try {
         const token = localStorage.getItem('token');
-        const response = await fetch("http://localhost:5000/candidates", {
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/candidates`, {
           headers: {
             'Authorization': `Bearer ${token}`
           }
