@@ -6,7 +6,7 @@ const CVStatut = ({ candidateId }) => {
   useEffect(() => {
     const fetchViews = async () => {
       try {
-        const res = await fetch(`http://localhost:5000/candidates/${candidateId}`);
+        const res = await fetch(`${process.env.REACT_APP_API_URL}/candidates/${candidateId}`);
         const data = await res.json();
         setCvViews(data.cvViews || 0);
       } catch (err) {
