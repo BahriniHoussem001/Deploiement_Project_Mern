@@ -54,7 +54,7 @@ const CandidateForm = () => {
     const submissionData = { ...formData, competences: allCompetences };
 
     try {
-      const response = await fetch("http://localhost:5000/generate-pdf", {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/generate-pdf`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(submissionData),
