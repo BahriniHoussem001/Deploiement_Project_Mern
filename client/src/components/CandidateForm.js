@@ -95,7 +95,7 @@ const CandidateForm = () => {
       // Get the authentication token
       const token = localStorage.getItem('token');
 
-      const response = await fetch("http://localhost:5000/generate-pdf", {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/generate-pdf`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
