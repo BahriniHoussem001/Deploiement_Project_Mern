@@ -8,7 +8,7 @@ const CandidateProfile = () => {
   const [candidate, setCandidate] = useState(null);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/candidates/${id}`)
+    fetch(`${process.env.REACT_APP_API_URL}/candidates/${id}`)
       .then((res) => res.json())
       .then((data) => setCandidate(data))
       .catch((err) => console.error("Erreur de récupération du candidat :", err));
