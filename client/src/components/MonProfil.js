@@ -24,7 +24,7 @@ const MonProfil = () => {
 
         // If not found, try to fetch by user ID
         if (!candidateId && user.id) {
-          const response = await fetch(`http://localhost:5000/candidates/user/${user.id}`, {
+          const response = await fetch(`${process.env.REACT_APP_API_URL}/candidates/${candidateId}`, {
             headers: {
               'Authorization': `Bearer ${localStorage.getItem('token')}`
             }
